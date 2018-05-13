@@ -36,7 +36,7 @@ Probability = Z.flatten().tolist()
 C = 0
 RandomChoice = []
 
-while C < 50000:
+while C < 500000:
     RandomChoice.extend(choices(Population, Probability))
     C = C + 1
     print(C)
@@ -56,9 +56,10 @@ print(RandomChoice)
 # Ax.set_zticks(np.linspace(0, .2, 5))
 # Ax.view_init(27, -21)
 
-plt.figure()
+plt.figure(figsize=(120, 90))
 x, y = zip(*RandomChoice)
 plt.plot(x, y, 'ro')
+plt.savefig('500000.png')
 plt.show()
 
 
