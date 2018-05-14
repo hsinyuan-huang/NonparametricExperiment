@@ -22,7 +22,7 @@ xmin, xmax = -3, 3
 ymin, ymax = -3, 3
 
 # Peform the kernel density estimate
-xx, yy = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+xx, yy = np.mgrid[xmin:xmax:50000j, ymin:ymax:50000j]
 positions = np.vstack([xx.ravel(), yy.ravel()])
 values = np.vstack([x, y])
 kernel = st.gaussian_kde(values)
