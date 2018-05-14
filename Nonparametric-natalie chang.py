@@ -15,11 +15,14 @@ import numpy as np
 import matplotlib.pyplot as pl
 import scipy.stats as st
 
-data = np.random.multivariate_normal((0.8, 0.2), [[-1, 1], [1, 0.3]], 100)
+data1 = np.random.multivariate_normal((-5,1), [[1,0], [0,1]], 50000//4)
+data2 = np.random.multivariate_normal((0,1), [[1,0], [0,1]], 50000//4)
+data3 = np.random.multivariate_normal((5,1), [[1,0], [0,1]], 50000//4)
+data = np.concatenate((data1,data2,data3),axis=0)
 x = data[:, 0]
 y = data[:, 1]
-xmin, xmax = -3, 3
-ymin, ymax = -3, 3
+xmin, xmax = -10, 10
+ymin, ymax = -10, 10
 
 # Peform the kernel density estimate
 xx, yy = np.mgrid[xmin:xmax:50000j, ymin:ymax:50000j]
